@@ -12,28 +12,32 @@
 <script type="text/javascript">
     function doCalc() {       
 let word="bottles";
-let word2="Take one down and pass it around,";
-let word3="No more";
+let word2="bottles";
+let word3="Take one down and pass it around,";
+let word4="No more";
 let num = [];
 for(let i=-1; i<100; i++) {
   num[i] = i;
 }
-num[0]=word3;
+num[0]=word4;
 num[-1]=99;
 for(let i=99; i>=0; i--){
    document.write(num[i]+" "+word+" of beer on the wall,"+num[i]+" "+word+ " of beer.");
-   document.write(word2+" "+num[i-1]+" "+word+" of beer of on the wall.");
+   document.write(word3+" "+num[i-1]+" "+word2+" of beer of on the wall.");
    document.write(" ");
-if(i==2){
-	word="bottle";
+if((num[i]==3&&num[i-1]==2)){
+   word2="bottle";
+}else if((num[i]==2&&num[i-1]==1)){
+   word="bottle";
+   word2="bottles";
 }else{
    word="bottles";
 }
 if(i==1){
-   word2="Go to the store and buy some more,";
+   word3="Go to the store and buy some more,";
 }
 }
-    }
+}
 	 document.write= function (log) {
 document.getElementById('document.write').innerHTML += log + "<br>";
 }
